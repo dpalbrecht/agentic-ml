@@ -1,0 +1,3 @@
+* Ask Claude to compare this implementation with how SpecKit works
+    * Do I need better/stricter context management like with bash scripts?
+* Add an online research component to experiments (and maybe baseline)
