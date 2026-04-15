@@ -22,7 +22,10 @@ For this command, write your exploration code to `scripts/explore.py`. The user 
 
 ## What to do
 
-Read the problem frame, then explore the dataset(s) referenced in it. Write the exploration script, run it in Docker, and use the output to write the assessment.
+1. Read the problem frame and inspect the datasets in /data.
+2. Think about the best tools to explore the dataset given the problem and dataset size. For example, Pandas is fine for moderately sized data but Polars is best for large datasets (millions of rows).
+3. Write the exploration script and run it in Docker.
+4. Use the output to write the assessment.
 
 Do the analysis yourself. Don't ask the user questions — just do the work and present findings. Only ask if something is genuinely ambiguous (e.g., the data path doesn't exist).
 
