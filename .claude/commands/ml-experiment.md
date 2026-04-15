@@ -24,6 +24,7 @@ Read all of:
 - `.ml-workflow/experiment-design.md`
 - Every `experiments/*/results.md` (scan all existing experiment directories)
 - Every `experiments/*/design.md` (to understand what's already been tried and why)
+- Every `experiments/*/research.md` (to avoid re-researching the same topics)
 
 ## Step 2: Propose the next experiment
 
@@ -45,13 +46,38 @@ Ask: "Here's what I'd try next: [proposal]. Want me to run this, or would you pr
 
 **Wait for user approval before proceeding.**
 
-## Step 3: Implement and run
+## Step 3: Research the approved approach
+
+Before writing code, use WebSearch to research the specific technique being implemented. Search for:
+- Best practices and recommended hyperparameters for this model/approach on this type of problem
+- Common pitfalls and failure modes
+- Relevant library API usage and parameters that matter
+- Preprocessing or feature engineering tips commonly paired with this approach
+- Any recent findings or benchmarks relevant to the approach
+
+Keep research focused and practical — you're looking for implementation guidance, not a literature review. Use what you find to inform the implementation in Step 4.
+
+## Step 4: Implement and run
 
 Determine the next experiment number by scanning existing directories (e.g., if `000-baseline` and `001-random-forest` exist, the next is `002`).
 
 Create a short, descriptive directory name: `experiments/[NNN]-[short-name]/`
 
-1. **Write `experiments/[NNN]-[name]/design.md`:**
+1. **Write `experiments/[NNN]-[name]/research.md`** — save what you found in Step 3:
+   ```markdown
+   # Experiment [NNN]: [Name] — Research
+
+   ## Approach Researched
+   [the technique/model being implemented]
+
+   ## Key Findings
+   - [practical findings that will inform the implementation]
+
+   ## Sources
+   - [URLs consulted]
+   ```
+
+2. **Write `experiments/[NNN]-[name]/design.md`:**
    ```markdown
    # Experiment [NNN]: [Name]
 
@@ -68,20 +94,20 @@ Create a short, descriptive directory name: `experiments/[NNN]-[short-name]/`
    [same primary metric, secondary metrics, validation strategy from experiment design]
    ```
 
-2. **Write `experiments/[NNN]-[name]/run.py`** — a standalone script that:
+3. **Write `experiments/[NNN]-[name]/run.py`** — a standalone script that:
    - Loads data using the same path and feature set as prior experiments
    - Implements the proposed approach
    - Uses the same validation strategy from the experiment design (always)
    - Reports primary and secondary metrics
    - Prints results clearly to stdout
 
-3. **Run it in Docker:**
+4. **Run it in Docker:**
    - Build if needed: `docker build -t agentic-automl .`
    - Run: `docker run --rm -v "$(pwd)":/project agentic-automl python experiments/[NNN]-[name]/run.py`
    - If a new dependency is needed, add it to `requirements.txt` and rebuild first
    - If it fails, fix the script and re-run. Don't ask the user to debug.
 
-4. **Write `experiments/[NNN]-[name]/results.md`:**
+5. **Write `experiments/[NNN]-[name]/results.md`:**
    ```markdown
    # Experiment [NNN]: [Name] — Results
 
@@ -111,7 +137,7 @@ Create a short, descriptive directory name: `experiments/[NNN]-[short-name]/`
    *Run on: [date]*
    ```
 
-## Step 4: Report
+## Step 5: Report
 
 After recording results, give the user a brief summary:
 - What was tried
