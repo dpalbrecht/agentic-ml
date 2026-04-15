@@ -1,3 +1,5 @@
+* Add an online research component to experiments (and maybe baseline)
+* Test on larger, more varied datasets (images, recommenders, big data)
+* Add guidance that experiments should run in under half an hour? This means smart sampling and efficient models (smaller embeddings, for example) before ramping up on a given solution
 * Ask Claude to compare this implementation with how SpecKit works
     * Do I need better/stricter context management like with bash scripts?
-* Add an online research component to experiments (and maybe baseline)
