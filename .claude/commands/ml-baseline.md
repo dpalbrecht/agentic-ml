@@ -20,9 +20,31 @@ Implement the baseline approach defined in the experiment design, run it, and re
    - Primary metric, secondary metrics (from experiment design)
    - Validation strategy (from experiment design)
 
-2. **Create `experiments/000-baseline/`**
+2. **Research the baseline approach** — Use WebSearch to investigate the specific baseline technique being implemented. Search for:
+   - Best practices and recommended hyperparameters for this model/approach on this type of problem
+   - Common pitfalls and failure modes
+   - Relevant scikit-learn (or other library) API usage and parameters that matter
+   - Preprocessing steps commonly paired with this approach
 
-3. **Write `experiments/000-baseline/design.md`:**
+   Keep research focused and practical — you're looking for implementation guidance, not a literature review.
+
+3. **Create `experiments/000-baseline/`**
+
+4. **Write `experiments/000-baseline/research.md`** — save what you found:
+   ```markdown
+   # Experiment 000: Baseline — Research
+
+   ## Approach Researched
+   [the baseline approach]
+
+   ## Key Findings
+   - [practical findings that will inform the implementation]
+
+   ## Sources
+   - [URLs consulted]
+   ```
+
+5. **Write `experiments/000-baseline/design.md`:**
    ```markdown
    # Experiment 000: Baseline
 
@@ -36,7 +58,7 @@ Implement the baseline approach defined in the experiment design, run it, and re
    [primary metric, secondary metrics, validation strategy — all from experiment design]
    ```
 
-4. **Write `experiments/000-baseline/run.py`** — a standalone script that:
+6. **Write `experiments/000-baseline/run.py`** — a standalone script that:
    - Loads the data from the path in the data assessment
    - Uses the recommended feature set from the data assessment
    - Implements exactly the baseline approach from the experiment design
@@ -44,12 +66,12 @@ Implement the baseline approach defined in the experiment design, run it, and re
    - Reports the primary metric and any secondary metrics
    - Prints results clearly to stdout
 
-5. **Run it in Docker:**
+7. **Run it in Docker:**
    - Build if needed: `docker build -t agentic-automl .`
    - Run: `docker run --rm -v "$(pwd)":/project agentic-automl python experiments/000-baseline/run.py`
    - If it fails, fix the script and re-run. Don't ask the user to debug.
 
-6. **Write `experiments/000-baseline/results.md`** using actual results from the run:
+8. **Write `experiments/000-baseline/results.md`** using actual results from the run:
 
    ```markdown
    # Experiment 000: Baseline — Results
