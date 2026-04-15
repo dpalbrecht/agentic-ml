@@ -57,13 +57,13 @@ Clone `agentic-automl` once, then install it into any project directory:
 
 ```bash
 # one-time: clone the tooling somewhere you'll keep it
-git clone <your-agentic-automl-url> ~/code/agentic-automl
+git clone <your-agentic-automl-url> ~/Desktop/github/agentic-automl
 
 # for each new ML project:
-mkdir -p ~/code/my-ml-project
-cd ~/code/my-ml-project
-git init
-~/code/agentic-automl/install.sh .
+mkdir -p ~/my-ml-project
+cd ~/my-ml-project
+git init (optional)
+~/Desktop/github/agentic-automl/install.sh .
 ```
 
 The install script copies the tooling files (commands, Dockerfile, CLAUDE.md, requirements.txt) into the target and creates empty `data/`, `scripts/`, `.ml-workflow/`, and `experiments/` directories. Project-specific artifacts are never touched.
