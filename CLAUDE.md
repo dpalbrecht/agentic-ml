@@ -1,4 +1,4 @@
-# Agentic AutoML Workflow
+# Agentic ML Workflow
 
 A structured ML workflow that enforces discipline through sequential phases.
 
@@ -42,8 +42,8 @@ data/                   ← input datasets
 ## Environment
 
 - **All code runs in Docker.** Never install packages in the user's global Python environment.
-- Build: `docker build -t agentic-automl .`
-- Run: `docker run --rm -v "$(pwd)":/project agentic-automl python <script>`
+- Build: `docker build -t agentic-ml .`
+- Run: `docker run --rm -v "$(pwd)":/project agentic-ml python <script>`
 - New dependencies go in `requirements.txt`, then rebuild the image.
 
 ## Code Persistence

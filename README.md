@@ -1,6 +1,4 @@
-# Agentic AutoML
-
-Like AutoML, but actually works.
+# Agentic ML
 
 A personal ML workflow tool that enforces discipline on ML projects by breaking them into sequential phases, each producing a markdown artifact that the next phase consumes.
 
@@ -46,28 +44,28 @@ CLAUDE.md               Rules for Claude Code (auto-loaded)
 
 ## Conventions
 
-- **All code runs in Docker.** Never installs packages into the user's global Python. Build with `docker build -t agentic-automl .`, run with `docker run --rm -v "$(pwd)":/project agentic-automl python <script>`. New dependencies go in `requirements.txt`, then rebuild.
+- **All code runs in Docker.** Never installs packages into the user's global Python. Build with `docker build -t agentic-ml .`, run with `docker run --rm -v "$(pwd)":/project agentic-ml python <script>`. New dependencies go in `requirements.txt`, then rebuild.
 - **All scripts are persisted.** No throwaway inline code. Experiment code in `experiments/NNN-name/run.py`, utilities in `scripts/`. Anything written must be standalone and re-runnable.
 - **Append-only experiment history.** Don't edit past experiments — run a new one. The history is the value.
 - **Evaluation is frozen at `/ml-design`.** Primary metric and validation strategy don't change across experiments. This prevents metric-shopping.
 
 ## Installing into a New Project
 
-Clone `agentic-automl` once, then install it into any project directory:
+Clone `agentic-ml` once, then install it into any project directory:
 
 ```bash
 # one-time: clone the tooling somewhere you'll keep it
-git clone <your-agentic-automl-url> ~/Desktop/github/agentic-automl
+git clone <your-agentic-ml-url> ~/Desktop/github/agentic-ml
 
 # for each new ML project:
 mkdir -p ~/my-ml-project
 cd ~/my-ml-project
-~/Desktop/github/agentic-automl/install.sh .
+~/Desktop/github/agentic-ml/install.sh .
 ```
 
 The install script copies the tooling files (commands, Dockerfile, CLAUDE.md, requirements.txt) into the target and creates empty `data/`, `scripts/`, `.ml-workflow/`, and `experiments/` directories. Project-specific artifacts are never touched.
 
-Re-running the install script overwrites the tooling files — that's how you get updates when you improve a command in `agentic-automl`. Your project artifacts stay put.
+Re-running the install script overwrites the tooling files — that's how you get updates when you improve a command in `agentic-ml`. Your project artifacts stay put.
 
 ## Getting Started
 

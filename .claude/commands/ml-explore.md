@@ -10,15 +10,15 @@ Prerequisite: `.ml-workflow/problem-frame.md` must exist. If it doesn't, tell th
 
 **All code runs in Docker.** Never install packages in the user's global environment.
 
-1. Build the container if it doesn't exist yet: `docker build -t agentic-automl .`
-2. Run scripts with the project mounted: `docker run --rm -v "$(pwd)":/project agentic-automl python scripts/explore.py`
+1. Build the container if it doesn't exist yet: `docker build -t agentic-ml .`
+2. Run scripts with the project mounted: `docker run --rm -v "$(pwd)":/project agentic-ml python scripts/explore.py`
 3. If you need a new package, add it to `requirements.txt` and rebuild the image before running.
 
 ## Code persistence
 
 **Save all code to `scripts/`.** Every script you write must be a standalone, re-runnable Python file. Never use throwaway inline code that disappears after execution.
 
-For this command, write your exploration code to `scripts/explore.py`. The user should be able to re-run it themselves with `docker run --rm -v "$(pwd)":/project agentic-automl python scripts/explore.py`.
+For this command, write your exploration code to `scripts/explore.py`. The user should be able to re-run it themselves with `docker run --rm -v "$(pwd)":/project agentic-ml python scripts/explore.py`.
 
 ## What to do
 

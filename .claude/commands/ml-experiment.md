@@ -102,8 +102,8 @@ Create a short, descriptive directory name: `experiments/[NNN]-[short-name]/`
    - Prints results clearly to stdout
 
 4. **Run it in Docker:**
-   - Build if needed: `docker build -t agentic-automl .`
-   - Run: `docker run --rm -v "$(pwd)":/project agentic-automl python experiments/[NNN]-[name]/run.py`
+   - Build if needed: `docker build -t agentic-ml .`
+   - Run: `docker run --rm -v "$(pwd)":/project agentic-ml python experiments/[NNN]-[name]/run.py`
    - If a new dependency is needed, add it to `requirements.txt` and rebuild first
    - If it fails, fix the script and re-run. Don't ask the user to debug.
 

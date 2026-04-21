@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install agentic-automl tooling into a target project directory.
+# Install agentic-ml tooling into a target project directory.
 #
 # Usage:
 #   ./install.sh /path/to/target-project
@@ -24,7 +24,7 @@ if [[ ! -d "$TARGET" ]]; then
     exit 1
 fi
 
-echo "Installing agentic-automl tooling into: $TARGET"
+echo "Installing agentic-ml tooling into: $TARGET"
 echo "From: $SOURCE"
 echo
 

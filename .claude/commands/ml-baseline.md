@@ -67,8 +67,8 @@ Implement the baseline approach defined in the experiment design, run it, and re
    - Prints results clearly to stdout
 
 7. **Run it in Docker:**
-   - Build if needed: `docker build -t agentic-automl .`
-   - Run: `docker run --rm -v "$(pwd)":/project agentic-automl python experiments/000-baseline/run.py`
+   - Build if needed: `docker build -t agentic-ml .`
+   - Run: `docker run --rm -v "$(pwd)":/project agentic-ml python experiments/000-baseline/run.py`
    - If it fails, fix the script and re-run. Don't ask the user to debug.
 
 8. **Write `experiments/000-baseline/results.md`** using actual results from the run:
