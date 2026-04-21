@@ -2,9 +2,9 @@
 
 Like AutoML, but actually works.
 
-A personal ML workflow tool, inspired by [spec-kit](https://github.com/github/spec-kit). Enforces discipline on ML projects by breaking them into sequential phases, each producing a markdown artifact that the next phase consumes.
+A personal ML workflow tool that enforces discipline on ML projects by breaking them into sequential phases, each producing a markdown artifact that the next phase consumes.
 
-The idea: most ML projects fail because people jump to modeling before understanding the problem, or unconsciously change their evaluation metric to fit their best model. This workflow prevents that by locking in decisions at each phase before moving on.
+The idea: most ML projects fail because people jump to modeling before understanding the problem and defining the solution. This workflow prevents that by locking in decisions at each phase before moving on.
 
 ## Workflow
 
@@ -62,7 +62,7 @@ git clone <your-agentic-automl-url> ~/Desktop/github/agentic-automl
 # for each new ML project:
 mkdir -p ~/my-ml-project
 cd ~/my-ml-project
-git init (optional)
+git init
 ~/Desktop/github/agentic-automl/install.sh .
 ```
 
@@ -77,7 +77,7 @@ Re-running the install script overwrites the tooling files — that's how you ge
 1. Install the tooling into your project (above).
 2. Drop your dataset into `data/`.
 3. Run the commands in order: `/ml-frame`, `/ml-explore`, `/ml-design`, `/ml-baseline`.
-4. Iterate with `/ml-experiment` until you hit your success threshold or run out of ideas.
+4. Iterate with `/ml-experiment` until you hit your success threshold.
 
 ## For Claude in a New Chat
 
