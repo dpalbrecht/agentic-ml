@@ -1,3 +1,6 @@
+* Test a bunch of domains - CPG data, cost to acquire customer, LTV, etc. use monte carlo to generate this data and see how close i can get to the ground truth?
+    * How can I break and improve it?
+    * Use an LLM to adversarially break the system?
 * Require using uv instead of pip in docker for requirements installation so it's fast
 * Require that all scripts be verbose and contain tqdm (or something custom) for large loops so that the user knows what's happening or taking so long
 * Require either cross validation or a train/val/test split in ml-design during the Validation Strategy to avoid overfitting, even for recommenders or temporal datasets that may otherwise be split once
