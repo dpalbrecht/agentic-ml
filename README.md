@@ -62,15 +62,12 @@ git clone <your-agentic-automl-url> ~/Desktop/github/agentic-automl
 # for each new ML project:
 mkdir -p ~/my-ml-project
 cd ~/my-ml-project
-git init
 ~/Desktop/github/agentic-automl/install.sh .
 ```
 
 The install script copies the tooling files (commands, Dockerfile, CLAUDE.md, requirements.txt) into the target and creates empty `data/`, `scripts/`, `.ml-workflow/`, and `experiments/` directories. Project-specific artifacts are never touched.
 
 Re-running the install script overwrites the tooling files — that's how you get updates when you improve a command in `agentic-automl`. Your project artifacts stay put.
-
-**Claude Code requires a git repo** to discover custom commands, so initialize one before or after install if needed.
 
 ## Getting Started
 
