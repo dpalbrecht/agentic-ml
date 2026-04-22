@@ -4,6 +4,9 @@ A personal ML workflow tool that enforces discipline on ML projects by breaking 
 
 The idea: most ML projects fail because people jump to modeling before understanding the problem and defining the solution. This workflow prevents that by locking in decisions at each phase before moving on.
 
+## Does it work?
+Heck yes it does. Check out the experiments over at [Agentic-ML Experiments](https://github.com/dpalbrecht/agentic-ml-experiments).
+
 ## Workflow
 
 Five Claude Code slash commands, run in order:
