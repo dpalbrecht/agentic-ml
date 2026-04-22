@@ -40,7 +40,7 @@ Guidelines for proposing experiments:
 - If the last experiment nearly hit the success threshold, try refinements
 - If it was far off, try a different approach
 - Don't repeat an experiment that's already been tried
-- Escalate complexity only when simpler approaches have been exhausted
+- Escalate complexity only when simpler approaches have been exhausted or the user requests it - for example, smaller pre-trained neural networks for embeddings instead of LLMs - this is important both for speed of training and for keeping the final solution as simple as possible
 
 Ask: "Here's what I'd try next: [proposal]. Want me to run this, or would you prefer something different?"
 

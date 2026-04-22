@@ -32,7 +32,7 @@ Example format:
 I'd go with #1 because [reason]. Which do you prefer?"
 
 ### 2. Validation Strategy
-Based on dataset size and structure from the data assessment, present 2-3 validation options with a recommended pick.
+Based on dataset size and structure from the data assessment, present 2-3 validation options with a recommended pick. Make an effort to suggest a type of cross-validation strategy, even for temporal datasets, since a single split can lead to overfitting.
 
 Example format:
 "For validation:
