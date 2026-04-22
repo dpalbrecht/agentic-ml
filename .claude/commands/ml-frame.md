@@ -41,10 +41,17 @@ Write `.ml-workflow/problem-frame.md` using the user's own words. Use this forma
 ```markdown
 # Problem Frame
 
-**Target:** [what they're predicting, task type]
-**Error priority:** [which errors cost more, or "symmetric"]
-**Constraints:** [hard constraints, or "none"]
-**Data:** [file path(s)]
+## Target
+[what they're predicting, task type]
+
+## Error Priority
+[which errors cost more, or "symmetric"]
+
+## Constraints
+[hard constraints, or "none"]
+
+## Data
+[file path(s)]
 
 ---
 *Framed on: [date]*
