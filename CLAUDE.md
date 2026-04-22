@@ -38,6 +38,7 @@ data/                   ← input datasets
 - The problem frame is the constitution. All decisions trace back to it.
 - Experiment log entries are append-only. Don't edit past experiments — run a new one.
 - The validation strategy and primary metric are set in the experiment design and never change across experiments.
+- Scripts must be verbose. Use `tqdm` for any loop or process that may take more than a few seconds, and `print()` for major phase transitions (loading data, fitting, saving results). The user watches raw Docker output with no progress UI, so silence looks like a hang.
 
 ## Environment
 
