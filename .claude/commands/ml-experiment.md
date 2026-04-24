@@ -41,6 +41,7 @@ Guidelines for proposing experiments:
 - If it was far off, try a different approach
 - Don't repeat an experiment that's already been tried
 - Escalate complexity only when simpler approaches have been exhausted or the user requests it - for example, smaller pre-trained neural networks for embeddings instead of LLMs - this is important both for speed of training and for keeping the final solution as simple as possible
+- Remember that experiments aren't just about models and hyperparameters. Feature selection, feature engineering, and preprocessing changes are valid experiment axes. If prior experiments show feature importance concentrated in a small subset, or if gains from model/hyperparameter changes are plateauing, consider proposing a feature-focused experiment before switching model families.
 
 Ask: "Here's what I'd try next: [proposal]. Want me to run this, or would you prefer something different?"
 
@@ -95,10 +96,11 @@ Create a short, descriptive directory name: `experiments/[NNN]-[short-name]/`
    ```
 
 3. **Write `experiments/[NNN]-[name]/run.py`** — a standalone script that:
-   - Loads data using the same path and feature set as prior experiments
+   - Loads data using the same path and feature set as prior experiments (unless this experiment is specifically about changing the feature set)
    - Implements the proposed approach
    - Uses the same validation strategy from the experiment design (always)
    - Reports primary and secondary metrics
+   - Reports feature importance (top 10 features by importance if the model supports it — e.g., tree feature_importances_, permutation importance, or coefficient magnitudes)
    - Prints results clearly to stdout
 
 4. **Run it in Docker:**
@@ -129,6 +131,9 @@ Create a short, descriptive directory name: `experiments/[NNN]-[short-name]/`
 
    ## vs. Success Threshold
    [success threshold] → [met / not met / gap of X]
+
+   ## Feature Importance
+   [top 10 features by importance, if available — note whether importance is concentrated or spread]
 
    ## Observations
    [1-2 sentences: what did we learn? what does this suggest for the next experiment?]

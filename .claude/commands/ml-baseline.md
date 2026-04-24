@@ -64,6 +64,7 @@ Implement the baseline approach defined in the experiment design, run it, and re
    - Implements exactly the baseline approach from the experiment design
    - Evaluates using exactly the validation strategy from the experiment design
    - Reports the primary metric and any secondary metrics
+   - Reports feature importance (top 10 features if the model supports it — e.g., coefficient magnitudes for linear models, feature_importances_ for trees)
    - Prints results clearly to stdout
 
 7. **Run it in Docker:**
@@ -85,6 +86,9 @@ Implement the baseline approach defined in the experiment design, run it, and re
 
    ## Validation Details
    [per-fold results if cross-validation]
+
+   ## Feature Importance
+   [top 10 features by importance, if available — note whether importance is concentrated or spread]
 
    ## vs. Success Threshold
    [success threshold from experiment design] → [met / not met / gap of X]

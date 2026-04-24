@@ -38,7 +38,8 @@ The script should print results for:
 3. **Missing values** — count per column. Flag columns with >10% missing.
 4. **Feature distributions** — quick summary stats. Flag outliers (>3 std from mean), zero-variance columns, or highly correlated pairs (>0.95).
 5. **Leakage check** — flag any feature that looks like it could leak the target (same name, suspiciously perfect correlation, or derived from future data).
-6. **Data quality issues** — duplicates, inconsistent formatting, mixed types in columns, anything weird.
+6. **Signal structure** — are feature-target correlations spread across many features, or concentrated in a few? If only a handful of features show meaningful signal (even weak signal), flag this explicitly — it suggests most features may be noise and feature selection should be explored during experimentation.
+7. **Data quality issues** — duplicates, inconsistent formatting, mixed types in columns, anything weird.
 
 ## Output
 
@@ -61,6 +62,9 @@ Write `.ml-workflow/data-assessment.md` with this format:
 
 ## Leakage Risk
 [any concerns, or "None identified"]
+
+## Signal Structure
+[Is signal spread across many features or concentrated in a few? If concentrated, flag that feature selection may improve modeling and note which features carry the signal.]
 
 ## Recommended Feature Set
 [which columns to use and why, which to drop and why]
