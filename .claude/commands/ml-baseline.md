@@ -14,7 +14,7 @@ Implement the baseline approach defined in the experiment design, run it, and re
 
 ## What to do
 
-1. **Read all upstream artifacts** — problem frame, data assessment, and experiment design. Extract:
+1. **Read all upstream artifacts (unless they are already in context)** — problem frame, data assessment, and experiment design. Extract:
    - Data path and feature set (from data assessment)
    - Baseline approach (from experiment design)
    - Primary metric, secondary metrics (from experiment design)

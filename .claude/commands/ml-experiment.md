@@ -16,7 +16,7 @@ This is the iterative experimentation loop. Each run:
 
 **This command can be run any number of times.** Each run creates a new numbered experiment directory.
 
-## Step 1: Read everything
+## Step 1: Read everything (unless they are already in context)
 
 Read all of:
 - `.ml-workflow/problem-frame.md`
